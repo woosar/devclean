@@ -1,0 +1,13 @@
+[package]
+name = "devclean"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+ratatui = "0.30.2"
+
+[target."cfg(windows)".dependencies]
+windows-sys = { version = "0.61.2", features = ["Win32_Storage_FileSystem", "Win32_Foundation"] }
+
+[target."cfg(unix)".dependencies]
+libc = "0.2.191"
